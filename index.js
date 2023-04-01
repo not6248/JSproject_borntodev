@@ -10,7 +10,6 @@ function WantTo_wakeUp(h,m,c){
     // const Cycles3 = timeInMinutes - (Cycles);  //3 Cycles 4H 30M (4.5 * 60)
 }
 
-
 function minuteToTime(minutes){
     if (minutes < 0) {
         hours = 24 + Math.floor(minutes / 60);
@@ -25,6 +24,7 @@ function minuteToTime(minutes){
 function Display(selectID1_H,selectID2_M,resultID){
     let h = parseInt(document.getElementById(selectID1_H).value);
     let m = parseInt(document.getElementById(selectID2_M).value);
+    document.getElementById(resultID).innerHTML=""
     if (!isNaN(h) && !isNaN(m)) {
         for (let c = 6; c >=3 ; c--) {
         document.getElementById(resultID).innerHTML+=minuteToTime(WantTo_wakeUp(h,m,c))+" สำหรับ "+c+" Cycles - การนอนหลับ "+Math.floor(c*90/60)+" ชั่วโมง<br>";
@@ -38,7 +38,6 @@ function Display(selectID1_H,selectID2_M,resultID){
     }else{
         alert("กรุณาใส่เวลาให้ครบด้วยครับ");
     }
-
 }
 
 // Display(6,30);
