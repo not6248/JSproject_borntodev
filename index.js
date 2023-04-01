@@ -22,15 +22,21 @@ function minuteToTime(minutes){
       return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
 }
 
-function Display(h,m){
-    console.log(minuteToTime(WantTo_wakeUp(h,m,6)));
-    console.log(minuteToTime(WantTo_wakeUp(h,m,5)));
-    console.log(minuteToTime(WantTo_wakeUp(h,m,4)));
-    console.log(minuteToTime(WantTo_wakeUp(h,m,3)));
+function Display(selectID1_H,selectID2_M){
+    let h = parseInt(document.getElementById(selectID1_H).value);
+    let m = parseInt(document.getElementById(selectID2_M).value);
+    if (!isNaN(h) && !isNaN(m)) {
+        console.log(minuteToTime(WantTo_wakeUp(h,m,6)));
+        console.log(minuteToTime(WantTo_wakeUp(h,m,5)));
+        console.log(minuteToTime(WantTo_wakeUp(h,m,4)));
+        console.log(minuteToTime(WantTo_wakeUp(h,m,3)));
+    }else{
+        alert("กรุณาใส่เวลาให้ครบด้วยครับ");
+    }
 
 }
 
-Display(6,30);
+// Display(6,30);
 
 // console.log(minuteToTime(Cycles5));
 // console.log(minuteToTime(Cycles4));
