@@ -22,14 +22,19 @@ function minuteToTime(minutes){
       return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
 }
 
-function Display(selectID1_H,selectID2_M){
+function Display(selectID1_H,selectID2_M,resultID){
     let h = parseInt(document.getElementById(selectID1_H).value);
     let m = parseInt(document.getElementById(selectID2_M).value);
     if (!isNaN(h) && !isNaN(m)) {
-        console.log(minuteToTime(WantTo_wakeUp(h,m,6)));
-        console.log(minuteToTime(WantTo_wakeUp(h,m,5)));
-        console.log(minuteToTime(WantTo_wakeUp(h,m,4)));
-        console.log(minuteToTime(WantTo_wakeUp(h,m,3)));
+        for (let c = 6; c >=3 ; c--) {
+        document.getElementById(resultID).innerHTML="kfwadad"
+        console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
+        // console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
+        // console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
+        // console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
+            
+        }
+        
     }else{
         alert("กรุณาใส่เวลาให้ครบด้วยครับ");
     }
