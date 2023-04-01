@@ -1,10 +1,10 @@
 
 
-function WantTo_wakeUp(hID,mID){
-    // let hours = parseInt(h);
-    // let minutes = parseInt(m);
+function WantTo_wakeUp(h,m,c){
+    let hours = parseInt(h);
+    let minutes = parseInt(m);
     let Cycles = c*90;
-    const timeInMinutes = parseInt(hID) * 60 + parseInt(mID);
+    const timeInMinutes = parseInt(h) * 60 + parseInt(m);
     const CyclesCalculat = timeInMinutes - (Cycles);  //6 Cycles 9 * 60
     // const Cycles5 = timeInMinutes - (Cycles);  //5 Cycles 7H 30M (7.5 * 60)
     // const Cycles4 = timeInMinutes - (Cycles);  //4 Cycles 6 * 60
@@ -25,7 +25,10 @@ function minuteToTime(minutes){
 }
 
 
-console.log(minuteToTime(WantTo_wakeUp(6,30)));
+console.log(minuteToTime(WantTo_wakeUp(6,30,6)));
+console.log(minuteToTime(WantTo_wakeUp(6,30,5)));
+console.log(minuteToTime(WantTo_wakeUp(6,30,4)));
+console.log(minuteToTime(WantTo_wakeUp(6,30,3)));
 // console.log(minuteToTime(Cycles5));
 // console.log(minuteToTime(Cycles4));
 // console.log(minuteToTime(Cycles3));
