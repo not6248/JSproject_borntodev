@@ -27,8 +27,8 @@ function Display(selectID1_H,selectID2_M,resultID){
     let m = parseInt(document.getElementById(selectID2_M).value);
     if (!isNaN(h) && !isNaN(m)) {
         for (let c = 6; c >=3 ; c--) {
-        document.getElementById(resultID).innerHTML="kfwadad"
-        console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
+        document.getElementById(resultID).innerHTML+=minuteToTime(WantTo_wakeUp(h,m,c))+" สำหรับ "+c+" Cycles - การนอนหลับ "+Math.floor(c*90/60)+" ชั่วโมง<br>";
+        // console.log();
         // console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
         // console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
         // console.log(minuteToTime(WantTo_wakeUp(h,m,c)));
